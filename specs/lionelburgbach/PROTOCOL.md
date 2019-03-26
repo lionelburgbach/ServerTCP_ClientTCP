@@ -4,27 +4,43 @@ We have to use TCP.
 
 ###Addresses and ports
 
-ports : 2222
+ports : 2424
 
-#Speak first
+##Speak first
 
-The client will ask the server first.
+The server will speak first and give commands.
 
-#Sequence
+##Sequence
 
-c. HELLO
-s. YOU CAN ASK FOR ADDITION (X ADD Y)
-   YOU CAN ASK FOR SUBSTRACTION (X SUB Y)
-   YOU CAN ASK FOR MULTIPLICATION (X MULT Y)
-   YOU CAN ASK FOR DIVISION (X DIV Y)
-c. 3 ADD 4 
-s. 3 ADD 4 = 7
-   BYE
+s. Welcome to Simple Calculator.
 
-#FAIL MESSAGE
+​	You can ask for addition (X + Y)
+​	You can ask for subtraction (X - Y)
+​	You can ask for multiplication (X * Y)
+​	You can ask for division (X / Y)
 
-never happend
+​	You can leave with BYE
 
-#SYNTAX
+c. 3 + 3
 
+s. 3.0 + 3.0 = 6.0
+Do you need something else ? 
+If you want to see the command again use CMD
 
+c. BYE 
+
+##FAIL MESSAGE
+
+c. x + y 
+
+s. Wrong syntaxe, try again
+
+c. BYE 
+
+##SYNTAX
+
+We only use parsing from a string in utf-8.
+
+##Closing and When
+
+The client will send the command BYE ans it will stop the server.
