@@ -5,10 +5,8 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.text.ParseException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.regex.Pattern;
 
 /**
  * This class implements a single-threaded TCP server. It is able to interact
@@ -16,7 +14,7 @@ import java.util.regex.Pattern;
  * the server is busy with another one, it will have to wait.
  *
  * @author Olivier Liechti
- * @modifie Lionel Burgbacher
+ * @modified Lionel Burgbacher
  */
 public class TcpServer {
 
