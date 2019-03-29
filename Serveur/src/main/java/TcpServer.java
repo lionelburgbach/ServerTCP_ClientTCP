@@ -76,7 +76,6 @@ public class TcpServer {
                 while ( (shouldRun) && (line = in.readLine()) != null ) {
                     if (line.equalsIgnoreCase(Protocol.CMD_BYE)) {
                         shouldRun = false;
-                        out.println("BYE BYE");
                     }
                     else if (line.contains(Protocol.CMD_CMD) || line.contains(Protocol.CMD_CMD.toLowerCase())){
 
