@@ -70,10 +70,18 @@ public class Main {
         if(lines.length != 4) throw new IllegalArgumentException("ipv4 address argument should be string of" +
                 "type: ?.?.?.?\n ? being a number between 0 and 255");
         byte[] bytes = new byte[4];
-        bytes[0] = Byte.parseByte(lines[0]);
-        bytes[1] = Byte.parseByte(lines[1]);
-        bytes[2] = Byte.parseByte(lines[2]);
-        bytes[3] = Byte.parseByte(lines[3]);
+
+
+        //TODO change this if it is not suitable
+        bytes[0] = (byte) Integer.parseInt(lines[0]);
+        bytes[1] = (byte) Integer.parseInt(lines[1]);
+        bytes[2] = (byte) Integer.parseInt(lines[2]);
+        bytes[3] = (byte) Integer.parseInt(lines[3]);
+        /*
+        bytes[0] = Byte.parseByte(lines[0], 10);
+        bytes[1] = Byte.parseByte(lines[1], 10);
+        bytes[2] = Byte.parseByte(lines[2], 10);
+        bytes[3] = Byte.parseByte(lines[3], 10);*/
         return Inet4Address.getByAddress(bytes);
     }
 
