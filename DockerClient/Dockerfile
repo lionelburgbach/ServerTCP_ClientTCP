@@ -1,5 +1,5 @@
 FROM java:8
-MAINTAINER Lionel Burgbacher <nicodeme.stalder@heig-vd.ch>
+MAINTAINER Nicodeme Stalder <nicodeme.stalder@heig-vd.ch>
 
 COPY TCP-Client-1.0-SNAPSHOT.jar /opt/app/client.jar
 
