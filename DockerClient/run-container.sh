@@ -1,3 +1,3 @@
 #!/bin/bash
 #
-docker run java-client
+docker run -it java-client
