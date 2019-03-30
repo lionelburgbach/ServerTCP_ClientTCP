@@ -15,8 +15,11 @@ The server will speak first and give commands.
 s. Welcome to Simple Calculator.
 
 ​	You can ask for addition (X + Y)
+
 ​	You can ask for subtraction (X - Y)
+
 ​	You can ask for multiplication (X * Y)
+
 ​	You can ask for division (X / Y)
 
 ​	You can leave with BYE
@@ -24,7 +27,9 @@ s. Welcome to Simple Calculator.
 c. 3 + 3
 
 s. 3.0 + 3.0 = 6.0
+
 Do you need something else ? 
+
 If you want to see the command again use CMD
 
 c. BYE 
@@ -43,4 +48,4 @@ We only use parsing from a string in utf-8.
 
 ##Closing and When
 
-The client will send the command BYE ans it will stop the server.
+The client will send the command BYE and it will stop the server.
