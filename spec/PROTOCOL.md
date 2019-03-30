@@ -48,4 +48,4 @@ We only use parsing from a string in utf-8.
 
 ##Closing and When
 
-The client will send the command BYE ans it will stop the server.
+The client will send the command BYE and it will stop the server.
