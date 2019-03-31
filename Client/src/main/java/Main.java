@@ -15,33 +15,16 @@ public class Main {
 
 
         System.out.println("### Teaching-HEIGVD-RES-2019-Exercise-Calculator  Client ###");
-        System.out.println("Enter the ipv4 address and port of the remote server");
 
         Scanner scanner = new Scanner(System.in);
-        String ipv4UserInput;
-        String portUserInput;
+        String ipv4UserInput = args[0];
+        String portUserInput = args[1];
         boolean isUserInputOK;
         InetAddress ipAddress;
         int port;
 
-        //we wait for user input and then determine ipAddress port accordingly to it
-        do{
-            ipv4UserInput = scanner.next();
-            portUserInput = scanner.next();
-            try{
-                ipAddress = parseIPv4Address(ipv4UserInput);
-                port = parsePortNumber(portUserInput);
-                isUserInputOK = true;
-            } catch(IllegalArgumentException iae){
-                isUserInputOK = false;
-                LOG.log(Level.INFO, "syntax error: should be of form: ipv4Adress portnumber");
-            }
-        }while(isUserInputOK == false);
-
-
-        //useless lines to avoid the compiler to complain about "might not have been initialized variables"
-        ipAddress = parseIPv4Address(ipv4UserInput);
-        port = parsePortNumber(portUserInput);
+        ipAddress = InetAddress.getByName(ipv4UserInput);
+        port = Integer.parseInt(portUserInput);
 
 
         // connect by TCP with the server
@@ -50,7 +33,6 @@ public class Main {
             tcpClient = new TCPClient(ipAddress, port);
         } catch (IOException e) {
             LOG.log(Level.SEVERE, "Failed to connect to the server\n");
-            return;
         }
 
         // allows commandLineCommunication with the server
@@ -62,9 +44,11 @@ public class Main {
             tcpClient.closeConnection();
         }
 
+
+
     }
 
-
+    /*
     static InetAddress parseIPv4Address(String ipv4Address) throws UnknownHostException, IllegalArgumentException {
         String[] lines = ipv4Address.split("\\.");
         if(lines.length != 4) throw new IllegalArgumentException("ipv4 address argument should be string of" +
@@ -81,12 +65,13 @@ public class Main {
         bytes[0] = Byte.parseByte(lines[0], 10);
         bytes[1] = Byte.parseByte(lines[1], 10);
         bytes[2] = Byte.parseByte(lines[2], 10);
-        bytes[3] = Byte.parseByte(lines[3], 10);*/
+        bytes[3] = Byte.parseByte(lines[3], 10);
         return Inet4Address.getByAddress(bytes);
     }
 
     static int parsePortNumber(String port){
         return Integer.parseInt(port);
     }
+    */
 
 }
